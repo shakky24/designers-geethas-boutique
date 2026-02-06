@@ -1,16 +1,15 @@
 import imageUrlBuilder from '@sanity/image-url';
 import { client } from './client';
-import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 const builder = imageUrlBuilder(client);
 
-export function urlFor(source: SanityImageSource) {
+export function urlFor(source: any) {
   return builder.image(source);
 }
 
 // Helper to get optimized image URL
 export function getImageUrl(
-  source: SanityImageSource,
+  source: any,
   width?: number,
   height?: number
 ) {

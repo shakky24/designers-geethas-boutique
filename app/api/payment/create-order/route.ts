@@ -3,6 +3,14 @@ import { razorpay, generateReceiptId, formatAmount } from '@/lib/payment/razorpa
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if Razorpay is configured
+    if (!razorpay) {
+      return NextResponse.json(
+        { error: 'Payment gateway not configured' },
+        { status: 503 }
+      );
+    }
+
     const { amount, customerDetails } = await request.json();
 
     // Validate amount
