@@ -61,8 +61,8 @@ const Header = () => {
       <nav className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo and Brand Name */}
-          <Link href="/" className="z-50 flex items-center gap-3">
-            <div className="relative w-12 h-12 md:w-14 md:h-14 p-2">
+          <Link href="/" className="z-50 flex items-center gap-2 md:gap-3">
+            <div className="relative w-12 h-12 md:w-14 md:h-14 p-2 flex-shrink-0">
               <Image
                 src="/logo.webp"
                 alt="Designers Geetha's Boutique Logo"
@@ -71,8 +71,8 @@ const Header = () => {
                 priority
               />
             </div>
-            <div className="hidden sm:block">
-              <h1 className="text-lg md:text-xl font-serif font-semibold text-olive-900 tracking-tight">
+            <div>
+              <h1 className="text-sm sm:text-base md:text-xl font-serif font-semibold text-olive-900 tracking-tight leading-tight">
                 Designers Geetha's Boutique
               </h1>
             </div>
