@@ -18,12 +18,6 @@ export default function ProductPage() {
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedSize, setSelectedSize] = useState('M');
 
-  const handleWhatsAppInquiry = () => {
-    const productUrl = typeof window !== 'undefined' ? window.location.href : '';
-    const message = getProductInquiryMessage(product.name, product.price, productUrl);
-    openWhatsApp(message);
-  };
-
   if (!product) {
     return (
       <div className="min-h-screen pt-24 px-6 flex items-center justify-center">
@@ -41,6 +35,12 @@ export default function ProductPage() {
       </div>
     );
   }
+
+  const handleWhatsAppInquiry = () => {
+    const productUrl = typeof window !== 'undefined' ? window.location.href : '';
+    const message = getProductInquiryMessage(product.name, product.price, productUrl);
+    openWhatsApp(message);
+  };
 
   // Related products from same category
   const relatedProducts = products
@@ -139,31 +139,6 @@ export default function ProductPage() {
                 <p className="text-3xl font-serif text-olive-900 mb-8">
                   ₹{product.price.toLocaleString('en-IN')}
                 </p>
-
-                {/* Size Selection (for tops and chudidhars) */}
-                {(product.category === 'designer-tops' ||
-                  product.category === 'chudidhars') && (
-                  <div className="mb-8">
-                    <label className="block text-sm text-olive-900 mb-3 tracking-wide uppercase">
-                      Select Size
-                    </label>
-                    <div className="flex gap-3">
-                      {['XS', 'S', 'M', 'L', 'XL', 'XXL'].map((size) => (
-                        <button
-                          key={size}
-                          onClick={() => setSelectedSize(size)}
-                          className={`px-4 py-2 text-sm border transition-colors ${
-                            selectedSize === size
-                              ? 'border-rust-600 bg-rust-600 text-cream-50'
-                              : 'border-sand-300 text-olive-800 hover:border-rust-600'
-                          }`}
-                        >
-                          {size}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
 
                 {/* WhatsApp Inquiry Buttons */}
                 <div className="space-y-3 mb-8">

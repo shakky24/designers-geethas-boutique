@@ -11,15 +11,4 @@ export default defineConfig({
   basePath: '/studio',
   plugins: [structureTool(), visionTool()],
   schema,
-  theme: {
-    colors: {
-      default: {
-        // Matching Divya's color palette
-        primary: '#3a3d2f', // olive-900
-        mainNavigation: {
-          bg: '#faf8f5', // cream-100
-        },
-      },
-    },
-  },
 });
