@@ -45,48 +45,48 @@ export default function HomePage() {
             style={{ objectPosition: 'center' }}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-olive-900/30 via-olive-900/10 to-cream-100/60" />
-        </div>
+       
+          <div className="absolute inset-0 flex items-center justify-center text-center px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="max-w-3xl"
+            >
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-wide text-cream-50 mb-6 leading-tight drop-shadow-lg">
+                DESIGNERS GEETHA'S BOUTIQUE
+              </h1>
+              <p className="text-lg md:text-xl text-cream-50 mb-8 tracking-wide uppercase font-sans drop-shadow-md">
+                Handloom Sarees & Custom Tailoring
+              </p>
+              <Link href="/collections">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-12 py-4 bg-cream-50 text-olive-900 text-sm tracking-luxury uppercase hover:bg-rust-600 hover:text-cream-50 transition-all duration-500 shadow-xl"
+                >
+                  Shop Collection
+                </motion.button>
+              </Link>
+            </motion.div>
+          </div>
 
-        <div className="relative h-full flex items-center justify-center text-center px-6">
+          {/* Scroll Indicator */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="max-w-3xl"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-wide text-cream-50 mb-6 leading-tight drop-shadow-lg">
-              DESIGNERS GEETHA'S BOUTIQUE
-            </h1>
-            <p className="text-lg md:text-xl text-cream-50 mb-8 tracking-wide uppercase font-sans drop-shadow-md">
-              Handloom Sarees & Custom Tailoring
-            </p>
-            <Link href="/collections">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-12 py-4 bg-cream-50 text-olive-900 text-sm tracking-luxury uppercase hover:bg-rust-600 hover:text-cream-50 transition-all duration-500 shadow-xl"
-              >
-                Shop Collection
-              </motion.button>
-            </Link>
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              className="w-6 h-10 border-2 border-cream-50/50 rounded-full flex justify-center pt-2"
+            >
+              <div className="w-1 h-3 bg-cream-50/50 rounded-full" />
+            </motion.div>
           </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="w-6 h-10 border-2 border-cream-50/50 rounded-full flex justify-center pt-2"
-          >
-            <div className="w-1 h-3 bg-cream-50/50 rounded-full" />
-          </motion.div>
-        </motion.div>
       </motion.section>
 
       {/* Category Highlight Section */}
